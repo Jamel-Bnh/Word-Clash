@@ -1,0 +1,20 @@
+<div class="header">
+  <h1>Word Clash</h1>
+</div>
+
+<div class="test-settings">
+  <div class="mode-buttons">
+    <button (click)="changeType('time')" [class.active]="currentType === 'time'">By Time</button>
+    <button (click)="changeType('words')" [class.active]="currentType === 'words'">By Word</button>
+    <button (click)="toggleNumbers()" [class.active]="includeNumbers"># Numbers</button>
+    <button (click)="togglePunctuation()" [class.active]="includePunctuation">@ Punctuation</button>
+  </div>
+
+  <div class="duration-buttons">
+    <button *ngFor="let d of durations" (click)="changeValue(d)" [class.active]="currentValue === d">{{ d }}</button>
+  </div>
+</div>
+
+<div class="reset-button">
+  <button (click)="resetTest()">↻ Reset</button>
+</div>

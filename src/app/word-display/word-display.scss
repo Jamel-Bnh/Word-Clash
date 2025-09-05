@@ -1,0 +1,82 @@
+.typing-container {
+  outline: none;
+  background: #111;
+  color: #bbb;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 1200px;
+  max-height: 250px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  line-height: 40px;
+  cursor: text;
+  margin-top: 140px;
+  white-space: normal; /* بدل pre-wrap */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 200px;
+  font-family: 'Roboto Mono', monospace; /* 👈 */
+  font-size: 22px;
+  line-height: 40px;
+  color: #D1D0C5;
+}
+
+.word {
+  font-size: 22px;
+  letter-spacing: 0;       /* no extra spacing */
+  word-spacing: 0;         /* no gap inside */
+}
+
+.word span {
+  display: inline-block;   /* keeps chars together */
+  margin: 0;
+  padding: 0;
+}
+
+
+.words-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: monospace;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.word span.correct { color: #52d17a; }
+.word span.incorrect { color: #e05555; }
+
+.cursor {
+  position: relative;
+  display: inline-block;
+   left: -10px;  /* 👈 make sure cursor has a box */
+}
+
+.cursor::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -3px;   /* 👈 بدل من right */
+  width: 2px;
+  height: 100%;
+  background: #ffcc00;
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
+
+
+.status-bar {
+  display: flex;
+  margin-top: 150px;
+}
+
+.timer {
+  font-size: 20px;
+  color: #ffd83d;
+  margin-bottom: 12px;
+  text-align: center;
+}

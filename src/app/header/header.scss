@@ -1,0 +1,99 @@
+.header {
+  background-color: var(--bg-header);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+/* Test settings لتحت */
+.test-settings {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  background-color: var(--bg-buttons);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+
+  .mode-buttons,
+  .duration-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &.active {
+      color: #f1c40f;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.reset-button {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem; // space between Start and Reset
+  justify-content: center;
+  z-index: 100;
+  margin-top: 85px;
+
+  button {
+    background: var(--bg-button);
+    color: var(--text-button);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      background: var(--bg-button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+  }
+}
+
+/* Theme variables */
+:root {
+  --bg-button: #e5e5e5;
+  --bg-button-hover: #d4d4d4;
+  --text-button: #222;
+}
+
+.dark-theme {
+  --bg-button: #2c2c2c;
+  --bg-button-hover: #1f1f1f;
+  --text-button: #f0f0f0;
+}

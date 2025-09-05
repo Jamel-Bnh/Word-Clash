@@ -1,0 +1,23 @@
+<div class="typing-wrapper">
+  <div class="status-bar" *ngIf="mode === 'time'">
+    <div class="timer">Time left: {{ timeLeft }}s</div>
+  </div>
+
+  <div class="typing-container" tabindex="0">
+    <ng-container *ngFor="let word of words; let wi = index">
+      <span class="word">
+        <ng-container *ngFor="let char of word.split(''); let ci = index"><span
+  [class.correct]="typedChars[wi][ci] === char"
+  [class.incorrect]="typedChars[wi][ci] && typedChars[wi][ci] !== char"
+  [class.cursor]="wi === currentWord && ci === currentChar">{{ char }}</span></ng-container>
+
+        <!-- cursor يظهر في نهاية الكلمة إذا user وصل لنهاية الكلمة -->
+       <span *ngIf="wi === currentWord && currentChar === word.length" class="cursor"></span>
+
+
+      </span>
+      <span>&nbsp;</span>
+      <!-- المسافة بين الكلمات -->
+    </ng-container>
+  </div>
+</div>
