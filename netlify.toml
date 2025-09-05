@@ -1,0 +1,8 @@
+[build]
+  command = "ng build --configuration=production"
+  publish = "dist/wordclash/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+    publish = "dist/wordclash/browser"
