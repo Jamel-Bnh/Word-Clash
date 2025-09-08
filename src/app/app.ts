@@ -54,7 +54,7 @@ export class App {
     this.showResults = false;
     this.typingLocked = false;
     if (this.wordDisplay) {
-      this.wordDisplay.reset();  // 👈 استعمل الميثود reset متاع الـ child
+      this.wordDisplay.reset(); 
     }
   }
 }

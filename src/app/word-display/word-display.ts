@@ -43,7 +43,7 @@ export class WordDisplayComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.generateWords();
     if (this.mode === 'time') {
-      this.timeLeft = this.durationOrCount; // don’t start timer yet
+      this.timeLeft = this.durationOrCount;
     }
   }
 
@@ -130,7 +130,7 @@ export class WordDisplayComponent implements OnInit, OnChanges {
 handleTyping(event: KeyboardEvent) {
   if (this.typingLocked) return;
 
-  event.preventDefault(); // 👈 يمنع المتصفح من يحط الكارسر
+  event.preventDefault();
 
   if (!this.started) this.started = true;
 
@@ -167,7 +167,6 @@ handleTyping(event: KeyboardEvent) {
     this.typedChars[this.currentWord][this.currentChar] = '';
     this.totalTyped = Math.max(0, this.totalTyped - 1);
   } else if (this.currentWord > 0) {
-    // نرجع للكلمة السابقة
     this.currentWord--;
     this.currentChar = this.words[this.currentWord].length;
   }
@@ -176,7 +175,6 @@ handleTyping(event: KeyboardEvent) {
 
 }
 
-  // 👇 Pause when tab loses focus
   @HostListener('window:blur')
   onBlur() {
     this.clearTimer();
@@ -216,7 +214,7 @@ handleTyping(event: KeyboardEvent) {
     this.typingStarted = false;
 
     this.timeLeft = this.mode === 'time' ? this.durationOrCount : 0;
-    this.timerStart = null;          // 👈 reset the start timestamp
+    this.timerStart = null;
   }
 
 }

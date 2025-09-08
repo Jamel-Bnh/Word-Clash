@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+   font-family: 'Roboto Mono', monospace;
   h1 {
     color: var(--text-color);
     font-size: 1.5rem;
@@ -12,7 +12,6 @@
   }
 }
 
-/* Test settings لتحت */
 .test-settings {
   position: fixed;
   left: 50%;
@@ -24,7 +23,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   z-index: 100;
-
+   font-family: 'Roboto Mono', monospace;
   .mode-buttons,
   .duration-buttons {
     display: flex;
@@ -55,7 +54,7 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 1rem; // space between Start and Reset
+  gap: 1rem;
   justify-content: center;
   z-index: 100;
   margin-top: 85px;
@@ -85,7 +84,6 @@
   }
 }
 
-/* Theme variables */
 :root {
   --bg-button: #e5e5e5;
   --bg-button-hover: #d4d4d4;
